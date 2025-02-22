@@ -25,10 +25,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { EyeIcon, EyeOffIcon, LockIcon, User2Icon } from "lucide-react";
-
-function delay() {
-  return new Promise(resolve => setTimeout(resolve, 2500));
-}
+import { delay } from "@/lib/utils";
 
 function AuthLoginPage() {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
@@ -37,7 +34,7 @@ function AuthLoginPage() {
 
   const onSubmit = async () => {
     await delay();
-    router.push("/");
+    router.push("/app");
   };
 
   return (
