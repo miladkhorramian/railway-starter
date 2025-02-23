@@ -100,7 +100,11 @@ const ScheduleForm = ({ onHandleSubmit }: ScheduleFormProps) => {
             />
           </CardContent>
           <CardFooter className="gap-3 justify-end !w-full">
-            <Button type="button" variant="secondary">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => onHandleSubmit()}
+            >
               زمان‌بندی بهینه
             </Button>
             <Button type="submit">زمان‌بندی</Button>
