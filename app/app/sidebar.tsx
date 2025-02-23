@@ -1,16 +1,24 @@
 import * as React from "react";
-import { Calendar1Icon, TrainIcon, Users2Icon } from "lucide-react";
+import {
+  Calendar1Icon,
+  TrainIcon,
+  UserCircle2Icon,
+  Users2Icon,
+} from "lucide-react";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import LogoutUser from "@/components/widgets/logout-user";
 
 // Menu items.
 const items = [
@@ -21,7 +29,7 @@ const items = [
   },
   {
     title: "ماشین‌های اعزامی",
-    url: "",
+    url: "/app/trains",
     icon: TrainIcon,
   },
   {
@@ -34,6 +42,9 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar side="right">
+      <SidebarHeader className="py-2">
+        <p className="text-md font-bold">سامانه راه‌آهن</p>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>منو</SidebarGroupLabel>
@@ -53,6 +64,13 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <div className="flex gap-3 justify-center hover:bg-muted transition-colors items-center text-slate-600 hover:cursor-pointer rounded p-3">
+          <UserCircle2Icon size={32} />
+          <span>احمد احمدی</span>
+        </div>
+        <LogoutUser />
+      </SidebarFooter>
     </Sidebar>
   );
 }

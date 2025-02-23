@@ -2,6 +2,8 @@ import { DataTableLocal } from "@/components/widgets/data-table-local";
 import { ColumnDef } from "@tanstack/react-table";
 import { generateMockSchedules } from "./fakes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { DownloadIcon } from "lucide-react";
 
 const columns: ColumnDef<unknown>[] = [
   { accessorKey: "block", header: "بلوک" },
@@ -31,8 +33,12 @@ const ScheduleList = () => {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="flex flex-row items-center gap-5">
         <CardTitle>لیست زمان‌بندی‌ها</CardTitle>
+        <Button variant="secondary" className="gap-2">
+          دانلود
+          <DownloadIcon size={20} />
+        </Button>
       </CardHeader>
       <CardContent>
         <DataTableLocal columns={columns} data={schedules} />
