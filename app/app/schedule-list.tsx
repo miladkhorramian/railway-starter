@@ -4,6 +4,7 @@ import { generateMockSchedules } from "./fakes";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 const columns: ColumnDef<unknown>[] = [
   { accessorKey: "block", header: "بلوک" },
@@ -22,7 +23,9 @@ const columns: ColumnDef<unknown>[] = [
   {
     accessorKey: "selection",
     header: "انتخاب برای اعزام",
-    cell: ({ getValue }) => (getValue() ? "✔" : "✘"),
+    cell: ({ getValue }) => (
+      <Switch value={String(getValue())} style={{ direction: "ltr" }} />
+    ),
   },
 ];
 
